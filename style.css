@@ -116,7 +116,7 @@ button {
 
 /* Cabeçalho */
 .cartaz-topo {
-  position: absolute;
+  margin-top: 10px;
   top: 0;
   left: 0;
   right: 0;
@@ -261,3 +261,4 @@ button {
   margin: 0;
   padding: 0;
 }
+
