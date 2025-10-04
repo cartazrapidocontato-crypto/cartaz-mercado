@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Cartaz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Importa Open Sans Bold Italic da Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Painel Lateral -->
+    <div class="formulario">
+
+      <div class="form-section">
+        <label for="titulo">Título:</label>
+        <select id="titulo">
+          <optgroup label="Destaques">
+            <option value="OFERTA">OFERTA</option>
+            <option value="PREÇO">PREÇO</option>
+            <option value="PROMOÇÃO">PROMOÇÃO</option>
+            <option value="EXCLUSIVO">EXCLUSIVO</option>
+            <option value="EXCLUSIVA">EXCLUSIVA</option>
+            <option value="EXCLUSIVIDADE">EXCLUSIVIDADE</option>
+            <option value="AÇÃO DE VENDAS">AÇÃO DE VENDAS</option>
+            <option value="SALES">SALES</option>
+            <option value="À VENDA">À VENDA</option>
+          </optgroup>
+
+          <optgroup label="Setores">
+            <option value="AÇOUGUE">AÇOUGUE</option>
+            <option value="FEIRINHA">FEIRINHA</option>
+            <option value="PADARIA">PADARIA</option>
+            <option value="HORTIFRUTI">HORTIFRUTI</option>
+            <option value="FRIOS">FRIOS</option>
+            <option value="IOGURTE">IOGURTE</option>
+            <option value="MASSAS">MASSAS</option>
+            <option value="SALGADOS">SALGADOS</option>
+            <option value="DOCES">DOCES</option>
+          </optgroup>
+        </select>
+
+        <label>Descrição:</label>
+        <input type="text" id="descricao" placeholder="Ex: Arroz 5Kg">
+
+        <label>Preço:</label>
+        <input type="text" id="preco" placeholder="Ex: 29,99">
+
+        <label>Rodapé:</label>
+        <input type="text" id="rodape" placeholder="Ex: Oferta válida até...">
+      </div>
+
+      <!-- PAINEL DE CORES -->
+      <div class="form-section cores">
+        <h4>🎨 Cores</h4>
+
+        <label>
+          Texto do Título:
+          <input type="color" id="corTitulo" value="#ff0000">
+        </label>
+
+        <label>
+          Fundo do Título:
+          <input type="color" id="bgTitulo" value="#ffff00">
+        </label>
+
+        <label>
+          Texto do Rodapé:
+          <input type="color" id="corRodape" value="#000000">
+        </label>
+
+        <label>
+          Fundo do Rodapé:
+          <input type="color" id="bgRodape" value="#ffff00">
+        </label>
+
+        <label>
+          Borda do Rodapé:
+          <input type="color" id="bordaRodape" value="#000000">
+        </label>
+      </div>
+
+      <div class="form-section">
+        <h4>🖼️ Imagens</h4>
+        <label>Imagem no Título:</label>
+        <input type="file" id="imagemTitulo" accept="image/*">
+
+        <label>Imagem no Rodapé:</label>
+        <input type="file" id="imagemRodape" accept="image/*">
+      </div>
+
+      <!-- Botões -->
+      <button onclick="window.print()">🖨️ Imprimir</button>
+      <button id="download-pdf">⬇️ Baixar PDF</button>
+
+    </div>
+    </div>
+
+    <!-- Cartaz -->
+    <div class="cartaz" id="cartaz">
+      <div class="cartaz-topo" id="cartazTitulo">OFERTA</div>
+
+      <div class="cartaz-conteudo">
+        <div class="cartaz-descricao" id="cartazDescricao">Descrição do Produto</div>
+        
+        <!-- 🔽 Apenas UM bloco de preço -->
+        <div class="cartaz-preco preco-pequeno" id="cartazPreco">
+          <span class="rs">R$</span>
+          <span class="parte-inteira" id="parte-inteira"></span>
+          <span class="parte-centavos" id="parte-centavos"></span>
+        </div>
+      </div>
+
+      <div class="cartaz-rodape" id="cartazRodape"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  
+</body>
+</html>

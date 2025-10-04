@@ -1,0 +1,263 @@
+/* Fonte para o painel lateral (Arial) */
+@font-face {
+  font-family: 'ArialCustom';
+  src: url('ARIALBD 1.TTF') format('truetype');
+}
+
+/* Corpo do site: mantém Arial para o gerenciador */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'ArialCustom', Arial, sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.formulario {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario h2 {
+  margin-top: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formulario .cores {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario .cores label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.formulario .cores input[type="color"] {
+  width: 100%;
+  height: 35px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* ===================== CARTAZ ===================== */
+
+/* Força Open Sans Bold Italic (via CDN) */
+.cartaz,
+.cartaz-topo,
+.cartaz-conteudo,
+.cartaz-descricao,
+.cartaz-preco,
+.cartaz-rodape {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.cartaz {
+  width: 210mm;
+  height: 297mm;
+  background: yellow;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 0;
+  border: 2px solid black;
+  position: relative;
+}
+
+/* Cabeçalho */
+.cartaz-topo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 7%;
+  background: yellow;
+  color: red;
+  font-size: clamp(48px, 9vw, 90px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1;
+}
+
+#cartazTitulo {
+  margin-top: 0px; /* espaço do topo */
+}
+
+.cartaz-conteudo {
+  position: absolute;
+  background-color: white;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 7%;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+.cartaz-descricao {
+  padding-top: 75px;
+  padding-bottom: 150px;
+  font-size: 60px;
+  text-align: center;
+  margin: 0 0 40px 0;
+  color: black;
+}
+
+.cartaz-preco {
+  color: red;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cartaz-preco .rs {
+  font-size: 40px;
+  color: black;
+  margin-right: 15px;
+  margin-top: 50px;
+}
+
+/* Preço base (3 dígitos) */
+.parte-inteira {
+  font-size: 240px;
+  line-height: 1;
+}
+
+.parte-centavos {
+  font-size: 100px;
+  align-self: flex-start;
+  position: relative;
+  top: -30px;
+}
+
+/* Ajustes automáticos */
+.preco-grande .parte-inteira {
+  font-size: 350px;
+}
+
+.preco-medio .parte-inteira {
+  font-size: 280px;
+}
+
+.preco-pequeno .parte-inteira {
+  font-size: 240px;
+}
+
+/*ajuste do R$*/
+.cartaz-preco .rs {
+  display: none;
+}
+
+.formulario:has(#preco:not(:placeholder-shown)) ~ .cartaz .cartaz-preco .rs {
+  display: inline;
+}
+
+.cartaz-rodape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7%;
+  background: yellow;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid black;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin-left: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .formulario {
+    display: none;
+  }
+
+  .cartaz {
+    width: 210mm;
+    height: 297mm;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.download-pdf {
+  width: 210mm;
+  height: 297mm;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
