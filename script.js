@@ -125,17 +125,3 @@ document.getElementById("imagemRodape").addEventListener("change", e => {
     reader.readAsDataURL(file);
   }
 });
- // DOWNLOAD EM PDF
-    document.getElementById("download-pdf").addEventListener("click", () => {
-      const cartaz = document.getElementById("cartaz");
-
-      const opt = {
-        margin:       0,
-        filename:     'cartaz.pdf',
-        image:        { type: 'jpeg', quality: 1 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      html2pdf().set(opt).from(cartaz).save();
-    });
