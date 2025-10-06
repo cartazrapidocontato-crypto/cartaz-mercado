@@ -1,3 +1,4 @@
+
 /* Fonte para o painel lateral (Arial) */
 @font-face {
   font-family: 'ArialCustom';
@@ -19,13 +20,14 @@ body {
   gap: 30px;
   align-items: flex-start;
   padding: 20px;
+  margin-left: -40px;
 }
 
 .formulario {
   width: 280px;
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px;
+  padding:  20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
@@ -116,7 +118,7 @@ button {
 
 /* Cabeçalho */
 .cartaz-topo {
-  margin-top: 10px;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -135,16 +137,16 @@ button {
 }
 
 #cartazTitulo {
-  margin-top: 0px; /* espaço do topo */
+  margin-top: 15px; /* espaço do topo */
 }
 
 .cartaz-conteudo {
   position: absolute;
   background-color: white;
-  top: 10%;
+  top: 12%;
   left: 0;
   right: 0;
-  bottom: 7%;
+  bottom: 5%;
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -162,6 +164,7 @@ button {
   text-align: center;
   margin: 0 0 40px 0;
   color: black;
+  text-transform: uppercase;
 }
 
 .cartaz-preco {
@@ -176,7 +179,7 @@ button {
   font-size: 40px;
   color: black;
   margin-right: 15px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* Preço base (3 dígitos) */
@@ -189,7 +192,7 @@ button {
   font-size: 100px;
   align-self: flex-start;
   position: relative;
-  top: -30px;
+  top: 20px;
 }
 
 /* Ajustes automáticos */
@@ -261,4 +264,6 @@ button {
   margin: 0;
   padding: 0;
 }
+
+
 
