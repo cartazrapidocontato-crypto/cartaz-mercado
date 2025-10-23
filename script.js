@@ -54,9 +54,9 @@ precoInput.addEventListener("input", () => {
     cartazPreco.classList.remove("preco-grande", "preco-medio", "preco-pequeno");
 
     // aplica classe de acordo com quantidade de dígitos
-    if (inteira.length === 1) {
-      cartazPreco.classList.add("preco-grande");
-    } else if (inteira.length <= 3) {
+    if (inteira.length === 1 || inteira.length === 2) { 
+     cartazPreco.classList.add("preco-grande");
+} else if (inteira.length <= 3) {
       cartazPreco.classList.add("preco-medio");
     } else {
       cartazPreco.classList.add("preco-pequeno");
@@ -99,29 +99,4 @@ document.getElementById("bordaRodape").addEventListener("input", e => {
   cartazRodape.style.borderTop = "5px solid " + e.target.value;
 });
 
-/* =====================
-   🖼️ IMAGENS
-===================== */
-// Imagem no título
-document.getElementById("imagemTitulo").addEventListener("change", e => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = evt => {
-      cartazTitulo.innerHTML = `<img src="${evt.target.result}" style="max-height:100%; max-width:100%;">`;
-    };
-    reader.readAsDataURL(file);
-  }
-});
 
-// Imagem no rodapé
-document.getElementById("imagemRodape").addEventListener("change", e => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = evt => {
-      cartazRodape.innerHTML = `<img src="${evt.target.result}" style="max-height:100%; max-width:100%;">`;
-    };
-    reader.readAsDataURL(file);
-  }
-});
