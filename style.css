@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'ArialCustom', Arial, sans-serif;
+  font-family: 'ArialCustom', Arial,  sans-serif;
   background: #f7f7f7;
   display: flex;
   justify-content: center;
@@ -105,7 +105,7 @@ button {
 .cartaz {
   width: 210mm;
   height: 297mm;
-  background: yellow;
+  background: rgb(255, 255, 0);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -119,11 +119,11 @@ button {
 /* Cabeçalho */
 .cartaz-topo {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   bottom: 7%;
-  background: yellow;
+  
   color: red;
   font-size: clamp(48px, 9vw, 90px);
   display: flex;
@@ -137,7 +137,7 @@ button {
 }
 
 #cartazTitulo {
-  margin-top: 15px; /* espaço do topo */
+  margin-top: 0px; /* espaço do topo */
 }
 
 .cartaz-conteudo {
@@ -196,8 +196,8 @@ button {
 }
 
 /* Ajustes automáticos */
-.preco-grande .parte-inteira {
-  font-size: 350px;
+.preco-grande .parte-inteira  {
+  font-size: 445px;
 }
 
 .preco-medio .parte-inteira {
@@ -229,13 +229,14 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 4px solid black;
+  border-radius: 1px;
 }
 
 @media print {
   @page {
     size: A4 portrait;
-    margin-left: 0;
+    margin: 0;
+
   }
 
   body {
@@ -252,18 +253,9 @@ button {
     width: 210mm;
     height: 297mm;
     border: none;
-    margin: 0;
+    margin:0;
     padding: 0;
   }
 }
-
-.download-pdf {
-  width: 210mm;
-  height: 297mm;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
 
 
